@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ludo Strategize</title>
+  <script>
+    window.onload = function() {
+      // Abhi testing ke liye temporary message
+      var playStoreUrl = ""; 
+      var appStoreUrl = "";
+
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      var statusText = document.getElementById("status");
+
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        if (appStoreUrl !== "") {
+          window.location.replace(appStoreUrl);
+        } else {
+          statusText.innerText = "App not available on App Store yet. Coming soon!";
+        }
+      } else {
+        if (playStoreUrl !== "") {
+          window.location.replace(playStoreUrl);
+        } else {
+          statusText.innerText = "App not available on Play Store yet. Coming soon!";
+        }
+      }
+    };
+  </script>
+</head>
+<body style="background:#111; color:#fff; font-family:sans-serif; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; text-align:center; padding:20px;">
+  <h2 id="status">Checking app availability...</h2>
+</body>
+</html>
